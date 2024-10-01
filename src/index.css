@@ -1,3 +1,33 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(assets/fonts/Roboto-Regular.ttf) format("truetype");
+  }
+  @font-face {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url(assets/fonts/Roboto-Bold.ttf) format("truetype");
+  }
+}
+
+body {
+  @apply font-roboto text-[1rem];
+}
+
+.listgroup li::before {
+  content: url("assets/images/icon-list.svg");
+  @apply pr-2;
+}
+
+.listgroup li {
+  @apply flex;
+}
