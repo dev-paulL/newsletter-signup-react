@@ -1,38 +1,36 @@
-import headerPictureMobile from "./assets/images/illustration-sign-up-mobile.svg";
-import headerPictureDesktop from "./assets/images/illustration-sign-up-desktop.svg";
+
+import { useState } from "react";
+import Form from "./components/Form";
+import Success from "./components/Success";
 
 function App() {
+  const [error, setError] = useState("");
+  const [subscribed, setSubscribed] = useState(false);
+  const [mail, setMail] = useState('')
+  const subscribeNewsletter = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    const form = event.currentTarget;
+    const emailInput = (form.elements.namedItem("email") as HTMLInputElement)
+      .value;
+
+    // Validate email (simple regex pattern)
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(emailInput)) {
+      setError("Valid email required");
+      return;
+    }
+
+    // Reset error if email is valid
+    setError("");
+    setSubscribed(true);
+    setMail(emailInput);
+  };
+
   return (
     <main>
-      <picture>
-        <source srcSet={headerPictureDesktop} media="(min-width: 60rem)" />
-        <img src={headerPictureMobile} alt="" />
-      </picture>
-      <form className="p-6 flex flex-col gap-4">
-        <h1 className="text-3xl font-bold text-grey800">Stay updated!</h1>
-        <p>Join 60,000+ product managers receiving monthly updates on:</p>
-        <ul className="flex flex-col gap-2 listgroup">
-          <li>Product discovery and building what matters</li>
-          <li>Measuring to ensure updates are a success</li>
-          <li>And much more!</li>
-        </ul>
-        <div className="flex flex-col gap-1 mt-2">
-          <label htmlFor="email" className="text-xs font-bold">Email address</label>
-          <input
-            type="email"
-            placeholder="email@company.com"
-            id="email"
-            required
-            className="p-3 border border-grey200 rounded-lg"
-          />
-        </div>
-        <button
-          type="submit"
-          className="cursor-pointer bg-grey600 text-white font-bold p-3 rounded-md"
-        >
-          Subscribe to monthly newsletter
-        </button>
-      </form>
+        {!subscribed && <Form subscribeNewsletter={subscribeNewsletter} error={error}/>}
+        {subscribed && <Success email={mail} />}
     </main>
   );
 }

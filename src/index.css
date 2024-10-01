@@ -31,3 +31,7 @@ body {
 .listgroup li {
   @apply flex;
 }
+
+h1 {
+  @apply text-3xl font-bold text-grey800
+}
