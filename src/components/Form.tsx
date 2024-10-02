@@ -2,6 +2,7 @@ import React from 'react'
 import headerPictureMobile from "../assets/images/illustration-sign-up-mobile.svg";
 import headerPictureDesktop from "../assets/images/illustration-sign-up-desktop.svg";
 import Button from './Button';
+import DevPaul from './DevPaul';
 
 type FormProps = {
     subscribeNewsletter:any;
@@ -10,9 +11,9 @@ type FormProps = {
 const Form : React.FC<FormProps> = ({subscribeNewsletter, error }) => {
   return (
     <div className='lg:grid lg:grid-cols-2 lg:grid-rows-1 lg:gap-8 lg:items-center lg:p-6'>
-        <picture className='lg:col-start-2 w-full'>
+        <picture className='lg:col-start-2'>
           <source srcSet={headerPictureDesktop} media="(min-width: 60rem)" />
-          <img src={headerPictureMobile} alt="" className="w-full" />
+          <img src={headerPictureMobile} alt="" className="w-full lg:max-h-[35rem]" />
         </picture>
         <form
           className="p-6 flex flex-col gap-4 lg:gap-8 lg:col-start-1 lg:row-start-1"
@@ -48,6 +49,7 @@ const Form : React.FC<FormProps> = ({subscribeNewsletter, error }) => {
           </div>
          <Button text="Subscribe to monthly newsletter" isSubmit={true} />
         </form>
+        <DevPaul />
       </div>
   )
 }

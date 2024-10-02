@@ -20,7 +20,7 @@
 }
 
 #root {
-  @apply font-roboto text-[1rem] lg:bg-grey600 min-h-screen w-full lg:flex lg:items-center lg:justify-center;
+  @apply font-roboto text-[1rem] lg:bg-grey600 min-h-screen w-full lg:flex lg:items-center lg:justify-center lg:py-8 ;
 }
 
 .listgroup li::before {

@@ -1,6 +1,7 @@
 import React from "react";
 import validationImage from "../assets/images/icon-success.svg";
 import Button from "./Button";
+import DevPaul from "./DevPaul";
 
 type SuccessProps = {
   email: string;
@@ -25,6 +26,7 @@ const Success: React.FC<SuccessProps> = ({ email, setSubscribed }) => {
           </p>
         </div>
         <Button text="Dismiss message" onClick={dismissMessage}/>
+        <DevPaul />
       </div>
     </>
   );

@@ -28,7 +28,7 @@ function App() {
   };
 
   return (
-    <main className={`lg:bg-white max-w-[60rem] lg:rounded-[2rem] w-auto`}>
+    <main className={`relative lg:bg-white max-w-[60rem] lg:rounded-[2rem] w-auto`}>
         {!subscribed && <Form subscribeNewsletter={subscribeNewsletter} error={error}/>}
         {subscribed && <Success email={mail} setSubscribed={setSubscribed} />}
     </main>
