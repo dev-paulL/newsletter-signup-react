@@ -18,12 +18,12 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![](./solution_screenshot.png)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [https://www.frontendmentor.io/solutions/newsletter-signup-form-react-typescript-tailwind-RgxPtkyzpA](https://www.frontendmentor.io/solutions/newsletter-signup-form-react-typescript-tailwind-RgxPtkyzpA)
+- Live Site URL: [https://dev-paull.github.io/newsletter-signup-react/](https://dev-paull.github.io/newsletter-signup-react/)
 
 ## My process
 
