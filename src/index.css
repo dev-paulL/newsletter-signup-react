@@ -19,8 +19,8 @@
   }
 }
 
-body {
-  @apply font-roboto text-[1rem];
+#root {
+  @apply font-roboto text-[1rem] lg:bg-grey600 min-h-screen w-full lg:flex lg:items-center lg:justify-center;
 }
 
 .listgroup li::before {
@@ -33,7 +33,7 @@ body {
 }
 
 h1 {
-  @apply text-4xl font-bold text-grey800
+  @apply text-4xl font-bold text-grey800 
 }
 
 p {

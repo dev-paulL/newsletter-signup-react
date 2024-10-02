@@ -9,17 +9,17 @@ type FormProps = {
 }
 const Form : React.FC<FormProps> = ({subscribeNewsletter, error }) => {
   return (
-    <>
-        <picture>
+    <div className='lg:grid lg:grid-cols-2 lg:grid-rows-1 lg:gap-8 lg:items-center lg:p-6'>
+        <picture className='lg:col-start-2 w-full'>
           <source srcSet={headerPictureDesktop} media="(min-width: 60rem)" />
           <img src={headerPictureMobile} alt="" className="w-full" />
         </picture>
         <form
-          className="p-6 flex flex-col gap-4"
+          className="p-6 flex flex-col gap-4 lg:gap-8 lg:col-start-1 lg:row-start-1"
           onSubmit={subscribeNewsletter}
           action="/"
         >
-          <h1 className="">Stay updated!</h1>
+          <h1 className="lg:text-6xl">Stay updated!</h1>
           <p>Join 60,000+ product managers receiving monthly updates on:</p>
           <ul className="flex flex-col gap-2 listgroup">
             <li>Product discovery and building what matters</li>
@@ -48,7 +48,7 @@ const Form : React.FC<FormProps> = ({subscribeNewsletter, error }) => {
           </div>
          <Button text="Subscribe to monthly newsletter" isSubmit={true} />
         </form>
-      </>
+      </div>
   )
 }
 
