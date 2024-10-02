@@ -30,7 +30,7 @@ function App() {
   return (
     <main>
         {!subscribed && <Form subscribeNewsletter={subscribeNewsletter} error={error}/>}
-        {subscribed && <Success email={mail} />}
+        {subscribed && <Success email={mail} setSubscribed={setSubscribed} />}
     </main>
   );
 }

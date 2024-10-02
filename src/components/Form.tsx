@@ -46,7 +46,7 @@ const Form : React.FC<FormProps> = ({subscribeNewsletter, error }) => {
               }`}
             />
           </div>
-         <Button text="Subscribe to monthly newsletter" />
+         <Button text="Subscribe to monthly newsletter" isSubmit={true} />
         </form>
       </>
   )
